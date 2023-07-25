@@ -1,5 +1,5 @@
 class Book {
-    private String title, author, ISBN;
+    final String title, author, ISBN;
 
     public Book(String title, String author, String ISBN) {
         this.title = title;
@@ -15,8 +15,8 @@ class Book {
 }
 
 class User {
-    private String name, userID;
-    private int age;
+    final String name, userID;
+    final int age;
     public User(String name, int age, String userID) {
         this.name = name;
         this.age = age;
@@ -31,7 +31,8 @@ class User {
 }
 
 abstract class LibraryItem {
-    private String itemID, status;
+    final String itemID;
+    private String status;
     public LibraryItem(String itemID) {
         this.itemID = itemID;
         this.status = "Available";
@@ -53,8 +54,8 @@ abstract class LibraryItem {
 }
 
 class BookItem extends LibraryItem {
-    private Book book;
-    private String edition;
+    final Book book;
+    final String edition;
 
     public BookItem(String itemID, Book book, String edition) {
         super(itemID);
